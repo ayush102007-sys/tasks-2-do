@@ -207,6 +207,7 @@ if st.session_state.page == "add_task":
                             else None
                         ),
                         "days_count": days_count if task_date else None,
+                        "email": email
                     }
                     supabase.table("tasks").insert(task_entry).execute()
                 except KeyError:
